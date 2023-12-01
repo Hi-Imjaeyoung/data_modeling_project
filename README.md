@@ -1,5 +1,5 @@
 팀이름과 프로젝트명
-# ONETEAM 이 만드는 ONETT(One Trendy Time)
+# ONETEAM 이 만드는 ONETT(One Trendy Time) - 이종표,이혜선,임재영,조훈
 
 프로젝트 설명
 # 서비스 설명
@@ -11,6 +11,7 @@
 
 ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
+project_overview
 # 프로젝트 요구사항 (각 이미지 추가)
 요구사항 정의서
 
@@ -23,14 +24,19 @@ redis로 구현한 최근 조회 영화 10건 리스트 <br/>
 
 논리적
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/ott%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%A2%85.drawio.png?raw=true"/>
-물리적
+
+주요 쿼리 
 
 # 프로젝트 관리 (각 이미지 추가)
 WBS
-https://docs.google.com/spreadsheets/d/18YNMnxvCihb60FS0_cGEvzS2jzDiq4Dp/edit#gid=1057334268 <br/>
+https://docs.google.com/spreadsheets/d/18YNMnxvCihb60FS0_cGEvzS2jzDiq4Dp/edit#gid=1057334268 
+초기 일정관리 및 수정되는 일정관리들에 대해 고민하며 WBS를 통해 각 업무에 대해 일정관리를 진행하였습니다.
+<br/>
 JIRA
 https://hyesun.atlassian.net/jira/software/projects/ON/boards/1?selectedIssue=ON-38
-
+git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작업 후 pr 을 보내 팀장이 merge 하며 형상관리 하였습니다. 
+회의록
+매일 회의를 하며 아이디어들과 추가 및 수정 삭제 되는 컬럼 및 속성들을 기록하며 프로젝트를 발전시켰습니다.
 # 프로젝트 테스트 (이미지 추가)
 테스트케이스 정의서
 
