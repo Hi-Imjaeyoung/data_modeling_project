@@ -13,7 +13,7 @@ create table review(id bigint primary key auto_increment,grade tinyint unsigned 
 user_id bigint not null, detail text not null ,foreign key(movie_id) references movies(id),foreign key(user_id) references members(id));
 
 -- favorite 
-create table favorite(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,love tinyint, dislike tinyint,foreign key(movie_id) references movies(id),
+create table favorite(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,love tinyint(1) not null default 0, dislike tinyint(1) not null default 0,foreign key(movie_id) references movies(id),
 foreign key(user_id) references members(id));
 
 -- watched_movie 
