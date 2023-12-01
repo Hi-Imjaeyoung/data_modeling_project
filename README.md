@@ -21,7 +21,9 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 # 프로젝트 관리 (각 이미지 추가)
 WBS
+https://docs.google.com/spreadsheets/d/18YNMnxvCihb60FS0_cGEvzS2jzDiq4Dp/edit#gid=1057334268
 JIRA
+https://hyesun.atlassian.net/jira/software/projects/ON/boards/1?selectedIssue=ON-38
 
 # 프로젝트 테스트 (이미지 추가)
 테스트케이스 정의서
