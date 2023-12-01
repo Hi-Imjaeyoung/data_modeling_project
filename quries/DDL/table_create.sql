@@ -8,6 +8,10 @@ Create table movies(id bigint primary key auto_increment, summary text not null,
 'All','12years','15years','No Adolescent') not null, running_time INT unsigned not null, trailer varchar(255),
 release_date DATE not null,title varchar(250) not null);
 
+-- disabled_members
+create table disabled_members(id bigint primary key auto_increment, member_id bigint not null, reason varchar(1000) not null, advise varchar(1000),
+foreign key(member_id) references members(id));
+
 -- review 
 create table review(id bigint primary key auto_increment,grade tinyint unsigned not null, movie_id bigint not null,
 user_id bigint not null, detail text not null ,
