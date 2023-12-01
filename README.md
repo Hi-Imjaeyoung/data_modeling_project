@@ -14,6 +14,9 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 # 프로젝트 요구사항 (각 이미지 추가)
 요구사항 정의서
 
+redis로 구현한 최근 조회 영화 10건 리스트 
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/redis/redis%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EA%B7%BC%20%EC%A1%B0%ED%9A%8C%20%EC%98%81%ED%99%94%20%EB%AA%A9%EB%A1%9D%2010%EA%B1%B4%20%EC%A1%B0%ED%9A%8C%20%EA%B8%B0%EB%8A%A5%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.PNG">
+
 # 프로젝트 (각 이미지 추가)
 개념적 모델링
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%EA%B0%9C%EB%85%90%EC%A0%81_%EC%B5%9C%EC%A2%85%EC%9D%B4%EA%B8%B8%EB%B0%94%EB%9D%BC%EB%8A%94%ED%98%9C%EC%84%A0.drawio.png"/>
