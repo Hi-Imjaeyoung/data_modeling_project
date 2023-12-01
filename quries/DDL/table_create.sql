@@ -6,7 +6,7 @@ role Enum('user','admin') not null default('user'), active tinyint(1) default 0)
 -- movies
 Create table movies(id bigint primary key auto_increment, summary text not null, review varchar(1000), content_rating Enum(
 'All','12years','15years','No Adolescent') not null, running_time INT unsigned not null, trailer varchar(255),
-release_date DATE not null,title varchar(250) not null, country varchar(50) not null);
+release_date DATE not null,title varchar(250) not null);
 
 -- review 
 create table review(id bigint primary key auto_increment,grade tinyint unsigned not null, movie_id bigint not null,
