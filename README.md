@@ -37,6 +37,14 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 ## 1. 개념적 모델링
 
+movie 라는 테이블에 기본 정보들을 나열한 뒤에, 한 컬럼에 여러 컬럼이 들어가야 하는 것들을 빼서 1차 정규화를 했습니다.
+movie - ott 는 한 영화는 많은 OTT를 가지며, 한 OTT도 많은 영화를 가질 수 있는 다대다 관계로 일대다 관계로 풀어줄 맵핑 테이블 movie_ott 을 설계했습니다. 
+배우, 국가, 감독, 장르, 어워드 테이블 또한 같습니다. 
+watched_movie 와 review, fovorite 테이블은 멤버의 영화에 대한 행동을 정의한 테이블들로 movie, member와 필수적이고 일대다 관계를 가지며 행동 정의 테이블은 옵셔널합니다.  
+member의 active 값을 통해 disabled_member에 탈퇴이유와 조언들을 남기고 
+member의 정보를 제약조건을 통해 물리적 삭제하지 않고 개인정보 정책에 맞게 논리적 삭제할 수 있도록 설계했습니다. 
+
+
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%EA%B0%9C%EB%85%90%EC%A0%81%20ERD_hyesun_20231203.png?raw=true"/>
 
 ## 2. 논리적 모델링
