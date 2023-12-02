@@ -29,7 +29,7 @@ foreign key(user_id) references members(id));
 
 -- watched_movie 
 create table watched_movie(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,
-foreign key(movie_id) references movies(id) on delete update cascade on update cascade,
+foreign key(movie_id) references movies(id) on delete cascade on update cascade,
 created_date datetime default current_timestamp,
 update_date datetime default current_timestamp,
 foreign key(user_id) references members(id));
@@ -38,29 +38,29 @@ foreign key(user_id) references members(id));
 create table award(id bigint primary key auto_increment, award varchar(50) not null);
 -- movie_award
 create table movie_award(id bigint primary key auto_increment, award_id bigint  not null, movie_id bigint not null,
-foreign key(award_id) references award(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(award_id) references award(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
 
 -- genre
 create table genre(id bigint primary key auto_increment, genre varchar(50) not null);
 create table movie_genre(id bigint primary key auto_increment, genre_id bigint  not null, movie_id bigint not null,
-foreign key(genre_id) references genre(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(genre_id) references genre(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
 
 -- ott 
 create table ott(id bigint primary key auto_increment, ott varchar(50) not null);
 create table movie_ott(id bigint primary key auto_increment, ott_id bigint  not null, movie_id bigint not null,
-foreign key(ott_id) references ott(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(ott_id) references ott(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
 
 -- actor 
 create table actor(id bigint primary key auto_increment, actor varchar(50) not null,info varchar(255));
 create table movie_actor(id bigint primary key auto_increment, actor_id bigint  not null, movie_id bigint not null,
-foreign key(actor_id) references actor(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(actor_id) references actor(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
 
 -- director 
 create table director(id bigint primary key auto_increment, directorr varchar(50) not null);
 create table movie_director(id bigint primary key, director_id bigint  not null, movie_id bigint not null,
-foreign key(director_id) references director(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(director_id) references director(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
 
 -- nation 
 create table nation(id bigint primary key auto_increment, nation varchar(50) not null);
 create table movie_nation(id bigint primary key, nation_id bigint  not null, movie_id bigint not null,
-foreign key(nation_id) references nation(id),foreign key(movie_id) references movies(id) on delete cascade);
+foreign key(nation_id) references nation(id),foreign key(movie_id) references movies(id) on delete cascade on update cascade);
