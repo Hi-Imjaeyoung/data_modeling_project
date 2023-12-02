@@ -17,18 +17,19 @@ create table review(id bigint primary key auto_increment,grade tinyint unsigned 
 user_id bigint not null, detail text not null ,
 created_date datetime default current_timestamp,
 update_date datetime default current_timestamp,
-foreign key(movie_id) references movies(id),foreign key(user_id) references members(id));
+foreign key(movie_id) references movies(id) on delete cascade on update cascade,foreign key(user_id) references members(id));
 
 -- favorite 
 create table favorite(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,love tinyint(1) not null default 0, 
 dislike tinyint(1) not null default 0,
 created_date datetime default current_timestamp,
 update_date datetime default current_timestamp,
-foreign key(movie_id) references movies(id),
+foreign key(movie_id) references movies(id) on delete cascade on update cascade,
 foreign key(user_id) references members(id));
 
 -- watched_movie 
-create table watched_movie(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,foreign key(movie_id) references movies(id),
+create table watched_movie(id bigint primary key auto_increment,movie_id bigint not null, user_id bigint not null,
+foreign key(movie_id) references movies(id) on delete update cascade on update cascade,
 created_date datetime default current_timestamp,
 update_date datetime default current_timestamp,
 foreign key(user_id) references members(id));
