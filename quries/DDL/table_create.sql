@@ -1,5 +1,5 @@
 -- members
-Create table members(id bigint primary key auto_increment, email varchar(50) not null unique, name varchar(50) not null
+Create table members(id bigint primary key auto_increment, email varchar(50) not null unique,passwd varchar(20) not null ,name varchar(50) not null
 ,birth DATE not null, sex Enum('M','F'), phone_number varchar(15) not null, nickname varchar(50) unique,
 role Enum('user','admin') not null default('user'), active tinyint(1) default 0);
 
