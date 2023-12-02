@@ -17,8 +17,8 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 # project_overview
 # 🤔요구사항 정의서
+<img width="1484" alt="스크린샷 2023-12-02 오후 8 23 09" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/7f56b562-f6d0-4b5f-aebf-7582a9143648">
 
-<img width="1312" alt="스크린샷 2023-12-02 오후 7 46 53" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/dc884d7f-3c8b-4ea7-a611-7371c2d2eb50">
 
 # redis를 이용하여 구현한 최근 조회 영화 10건 리스트 입니다. <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/>
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/redis/redis%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EA%B7%BC%20%EC%A1%B0%ED%9A%8C%20%EC%98%81%ED%99%94%20%EB%AA%A9%EB%A1%9D%2010%EA%B1%B4%20%EC%A1%B0%ED%9A%8C%20%EA%B8%B0%EB%8A%A5%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.PNG">
