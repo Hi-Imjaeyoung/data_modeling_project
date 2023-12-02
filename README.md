@@ -27,8 +27,6 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 회원 탈퇴 (탈퇴시 탈퇴사유 입력, 회원 정보는 개인정보 정책에 따라 삭제 바로 삭제 되지 않을 수 있음) <br/>
 최신 조회 영화 10건 목록 조회 <br />
 
-# redis를 이용하여 구현한 최근 조회 영화 10건 리스트 입니다. <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/>
-<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/redis/redis%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EA%B7%BC%20%EC%A1%B0%ED%9A%8C%20%EC%98%81%ED%99%94%20%EB%AA%A9%EB%A1%9D%2010%EA%B1%B4%20%EC%A1%B0%ED%9A%8C%20%EA%B8%B0%EB%8A%A5%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.PNG">
 
 # 🤗프로젝트
 # 개념적 모델링
@@ -69,7 +67,8 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 
 # 테스팅 영상
 
-
+# redis를 이용하여 구현한 최근 조회 영화 10건 리스트 입니다. <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/>
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/redis/redis%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EA%B7%BC%20%EC%A1%B0%ED%9A%8C%20%EC%98%81%ED%99%94%20%EB%AA%A9%EB%A1%9D%2010%EA%B1%B4%20%EC%A1%B0%ED%9A%8C%20%EA%B8%B0%EB%8A%A5%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.PNG">
 
 # 마지막 한 줄 회고
 이혜선 "멋진 팀원들을 만나 매일이 행복한 프로젝트였습니다. 다양한 테이블에 관계에 대해 고민해볼 수 있어 재밌었습니다."<br/>
