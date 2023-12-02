@@ -1,5 +1,7 @@
 팀이름과 프로젝트명
-# ONETEAM 이 만드는 ONETT(One Trendy Time) - 이종표,이혜선,임재영,조훈
+
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=ONETEAM이%20만든%20ONETT&fontSize=50)
+## ONETEAM 이 만드는 ONETT(One Trendy Time) - 이종표,이혜선,임재영,조훈
 
 프로젝트 설명
 # 서비스 설명
