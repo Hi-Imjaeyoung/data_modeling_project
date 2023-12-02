@@ -37,7 +37,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 ## 1. 개념적 모델링
 
-<img src="https://raw.githubusercontent.com/hyesunlee30/data_modeling_1team/main/data_modeling/ERD/onett.drawio.png"/>
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%EA%B0%9C%EB%85%90%EC%A0%81%20ERD_hyesun_20231203.png?raw=true"/>
 
 ## 2. 논리적 모델링
 
