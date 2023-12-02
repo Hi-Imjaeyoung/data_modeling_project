@@ -30,7 +30,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 # 🤗프로젝트
 # 개념적 모델링
-<img src="https://raw.githubusercontent.com/hyesunlee30/data_modeling_1team/main/data_modeling/ERD/onett.drawio.png"/>
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/final_onett.drawio.png?raw=true"/>
 
 
 # 논리적 모델링
