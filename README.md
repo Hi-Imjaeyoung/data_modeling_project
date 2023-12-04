@@ -1,4 +1,4 @@
-
+![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/13d2cb10-5582-41f0-a11a-18e7870deba3)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/9cc86f19-f77b-43d7-8086-07f7bf978a42)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/20779b86-79ba-4e79-a79d-89a939e075cb)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/76893b6d-01c0-4758-b396-895042dcc4b5)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/ff3ee39c-9617-4508-9ad9-07cda2a84c5d)
 ![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=ONETEAM이%20만든%20ONETT&fontSize=50)
 
 ## ONETEAM 이 만드는 ONETT(One Trendy Time)<br/>
@@ -181,7 +181,7 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 <img width="1312" alt="스크린샷 2023-12-02 오후 7 46 53" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/8f2fae58-9454-44e8-aef4-60ccbe6ccaa2">
 
 
-## 2. TEST quries
+## 2. TEST quries & TEST 영상
 
 TEST CASE1
 요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
@@ -208,65 +208,71 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0002.gif?raw=true">
 
 TEST CASE3
-요구사항 RE0005,RE0006 <br/>
-회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함.
+요구사항 RE0003,RE0006 <br/>
+회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함. <br>
 disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
 
+```sql
+-- RE0003 회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함.
+-- RE0006 disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음 
+
+insert into disabled_members(member_id,reason,advise)values(14,'그냥','UI가 이상해요');
+insert into disabled_members(member_id,reason)values(13,'공부해야해요');
+insert into disabled_members(member_id)values(13);
+```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0003~6.gif?raw=true">
 
 TEST CASE4
 요구사항 RE0007
 movie 기본 정보 없이 insert시 오류 발생
-
+```sql
+-- RE0007 movie 기본 정보 없이 insert시 오류 발생
+insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
+```
 <im src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE007.gif?raw=true">
 
 TEST CASE5
-요구사항 RE_0008
-<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0008.gif?raw=true">
-
-
-TEST CASE4
+요구사항 RE_0008 다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
 ```sql
--- movie 기본 정보 없이 insert시 오류 발생
-insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
-```
-
-TEST CASE3 + 6
-```sql
-다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
--- movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
-select * from movies as ms
-inner join  movie_actor as ma on ms.id=ma.movie_id
+-- RE0008 movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
+select * from movies as ms 
+inner join  movie_actor as ma on ms.id=ma.movie_id 
 left join actor as a on ma.actor_id=a.id;
 ```
-TEST CASE4
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0008.gif?raw=true">
+
+TEST CASE6
+요구사항 RE_0010 등급에 대한 필터링
 ```sql
--- disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
-
-insert into disabled_members(member_id,reason,advise)values(14,'그냥','UI가 이상해요');
-insert into disabled_members(member_id,reason)values(13,'공부해야해요');
-insert into disabled_members(member_id)values(13);
-
--- movie 테이블에 content_rating 을 통해 성인 콘테츠을 포함/포함하지 않은 select 가 가능해야함
+-- RE0010 movie 테이블에 content_rating 을 통해 성인 콘테츠을 포함/포함하지 않은 select 가 가능해야함
 select * from movies where content_rating != 'No Adolescent';
 select * from movies where content_rating = 'No Adolescent';
 ```
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0010.gif?raw=true">
 
-case 7 
+TEST CASE7 
+요구사항 RE0012
 ```sql
--- 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
-select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A
+-- RE0012 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
+select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A 
 inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor_id = C.id where C.actor = "마동석";
 ```
-case 8
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0012.gif?raw=true">
+
+
+TEST CASE8 
+요구사항 RE0013
 ```sql
 -- 회원은 장르로 검색했을때 해당 장르인 작품 리스트를 볼 수 있다.
 select movies.title as 제목 from genre inner join movie_genre on movie_genre.genre_id = genre.id
 inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공포";
 ```
-case 9
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0013.gif?raw=true">
+
+TEST CASE9
+요구사항 RE0014
 ```sql
--- 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다.
+-- RE0014 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다. 
 select * from movies m
 left join movie_actor ma on m.id = ma.movie_id
 left join actor a on a.id = ma.actor_id
@@ -274,30 +280,35 @@ left join movie_genre mg on m.id = mg.movie_id
 left join genre g on g.id = mg.genre_id
 where a.actor = "유연석" and g.genre = "스릴러";
 ```
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0014.gif?raw=true">
 
-case 10 
+TEST CASE10
 ```sql
--- favoite 테이블에서 좋아요를 찍은 영화별로 count, limit 10을 걸어 리스트 출력
+-- RE0021 favoite 테이블에서 좋아요를 찍은 영화별로 count, limit 10을 걸어 리스트 출력
 select * from favorite;
 select count(*) AS cnt, m.title from favorite f
 left join movies m on f.movie_id = m.id
 group by movie_id order by cnt desc;
 ```
-case 11
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0021.gif?raw=true">
+
+TEST CASE11
 ```sql
--- 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
+-- RE0022 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
 select * from review;
 select a.title, b.detail from movies as a inner join review as b on a.id = b.movie_id
  where b.created_date > date_add(now(),interval -7 day) and b.detail is not null;
 ```
-case 12
-```sql
- --영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
-insert into members (id,email, passwd, name, phone_number, birth, nickname) values (
-'1','test1234@naver.com', '1234', '이혜선', '01012341234', '19900101','emma') ;
-INSERT INTO test.movies (id, summary, review, content_rating, running_time, trailer, release_date,title)
-VALUES ('1','잼있다', '굿', '12years', '123', 'sss', '2020-12-01', '재영이의 일요일');
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE22.gif?raw=true">
 
+TEST CASE12
+```sql
+ --RE0023 영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
+
+ insert into members (id,email, passwd, name, phone_number, birth, nickname) values (
+'1','test1234@naver.com', '1234', '이혜선', '01012341234', '19900101','emma') ;
+INSERT INTO test.movies (id, summary, review, content_rating, running_time, trailer, release_date,title) 
+VALUES ('1','잼있다', '굿', '12years', '123', 'sss', '2020-12-01', '재영이의 일요일');
 INSERT INTO test.review (`grade`, `movie_id`, `user_id`, `detail`) VALUES (4, 1, 1, '넘 졸리던데요');
 INSERT INTO test.award (id,award) VALUES (1,'재영상');
 INSERT INTO test.movie_award (award_id,movie_id) VALUES (1,1);
@@ -307,13 +318,19 @@ select * from test.movie_award;
 select * from test.review;
 select * from test.favoite;
 ```
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE23-1.gif?raw=true">
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE23-2.gif?raw=true">
 
-## 테스팅 영상
+
 
 ## redis를 이용하여 구현한 최근 조회 영화 10건 리스트 입니다. <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/>
 
 <br/>
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/redis/redis%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EA%B7%BC%20%EC%A1%B0%ED%9A%8C%20%EC%98%81%ED%99%94%20%EB%AA%A9%EB%A1%9D%2010%EA%B1%B4%20%EC%A1%B0%ED%9A%8C%20%EA%B8%B0%EB%8A%A5%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.PNG">
+
+## 테스팅 영상
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0009.gif?raw=true">
+<iframe width="944" height="531" src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0009.gif?raw=true" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 마지막 한 줄 회고록
 
