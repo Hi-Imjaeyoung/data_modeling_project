@@ -194,6 +194,7 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 ## 2. TEST quries & TEST 영상
 <details> <summary><b>TEST CASE1</b></summary> 
 <div markdown="1"> 
+ 
 ### 요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
 ### 이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 
