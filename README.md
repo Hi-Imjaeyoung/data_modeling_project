@@ -49,16 +49,16 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 </div>
 </details>
 
-
-
-
-## 2. 논리적 모델링
-
+<details> <summary><b>2. 논리적 모델링</b></summary> 
+<div markdown="1"> 
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%E3%84%B9%E3%85%87%E3%84%B9%E3%85%87%EC%B5%9C%EC%A2%85.drawio.png?raw=true"/>
 <br/>
 <br/>
+</div> 
+</details>
 
-## 3. 물리적 모델링 주요 쿼리
+<details> <summary><b>3. 물리적 모델링 주요 쿼리</b></summary> 
+<div markdown="1"> 
 
 ## create table <br/>
 
@@ -157,6 +157,9 @@ INSERT INTO ott.favorite (movie_id, user_id, love, dislike) VALUES (12, 11, 1, 0
 INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/%ED%85%8C%EC%9D%B4%EB%B8%94%20%EC%83%9D%EC%84%B1%20%EB%B0%8F%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%BD%EC%9E%85.gif?raw=true">
+
+</div> 
+</details>
 
 
 ## 4. 프로젝트 관리
