@@ -183,7 +183,9 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 
 ## 2. TEST quries
 
-
+TEST CASE1
+이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
+이메일 인즈 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
 insert into members (email, passwd, name, phone_number, birth, nickname) values (
@@ -192,8 +194,8 @@ update members set active = 1 where id = 1;
 ```
 ![RE0001](https://github.com/hyesunlee30/data_modeling_1team/assets/106050747/8567c61e-19b9-4d15-b766-509b39825535)
 
-
-
+TEST CASE2
+중복 ID 생성 방지
 ```sql
 -- 기존에 있는 email과 같은 email로 insert 쿼리를 실행시 unique에 걸려 insert가 되지 않아야함
 select * from members;
@@ -202,7 +204,7 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 insert into members (email, passwd, name, phone_number, birth, nickname) values (
 'test1234@naver.com', '4321', '이선혜', '01012341234', '19900101','emma') ;
 ```
-
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0002.gif?raw=true">
 ```sql
 -- movie 기본 정보 없이 insert시 오류 발생
 insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
