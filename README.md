@@ -161,8 +161,8 @@ INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 </div> 
 </details>
 
-
-## 4. 프로젝트 관리
+<details> <summary><b>4. 프로젝트 관리</b></summary> 
+<div markdown="1"> 
 
 ### WBS
 
@@ -180,10 +180,17 @@ INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 
 git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작업 후 pr 을 보내 팀장이 merge 하며 형상관리 하였습니다.
 
-## 5.회의록
+</div> 
+</details>
+
+<details> <summary><b>5.회의록</b></summary> 
+<div markdown="1"> 
 
 매일 회의를 하며 아이디어들과 추가 및 수정 삭제 되는 컬럼 및 속성들을 기록하며 프로젝트를 발전시켰습니다.
 <img width="1123" alt="스크린샷 2023-12-02 오후 8 08 14" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/d9079a43-26a7-46bc-92f3-a3452779ff54">
+
+</div> 
+</details>
 
 # 🤩프로젝트 테스트
 
@@ -195,8 +202,9 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 <details> <summary><b>TEST CASE1</b></summary> 
 <div markdown="1"> 
  
-### 요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
-### 이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
+### 요구 사항 RE0001 
+이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
+이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
@@ -208,9 +216,10 @@ update members set active = 1 where id = 1;
 </div> 
 </details>
 
-
-TEST CASE2
-요구 사항 RE0002 
+<details> <summary><b>TEST CASE2</b></summary> 
+<div markdown="1"> 
+ 
+### 요구 사항 RE0002 
 중복 ID 생성 방지 <br/>
 ```sql
 -- 기존에 있는 email과 같은 email로 insert 쿼리를 실행시 unique에 걸려 insert가 되지 않아야함
@@ -222,8 +231,14 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0002.gif?raw=true">
 
-TEST CASE3
-요구사항 RE0003,RE0006 <br/>
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE3</b></summary> 
+<div markdown="1"> 
+ 
+### 요구사항 RE0003,RE0006 <br/>
 회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함. <br>
 disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
 
@@ -237,8 +252,14 @@ insert into disabled_members(member_id)values(13);
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0003~6.gif?raw=true">
 
-TEST CASE4
-요구사항 RE0007
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE4</b></summary> 
+<div markdown="1"> 
+
+### 요구사항 RE0007
 movie 기본 정보 없이 insert시 오류 발생
 ```sql
 -- RE0007 movie 기본 정보 없이 insert시 오류 발생
@@ -246,8 +267,14 @@ insert into movies(review,content_rating,running_time,release_date,title)values(
 ```
 <im src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE007.gif?raw=true">
 
-TEST CASE5
-요구사항 RE_0008 다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
+</div> 
+</details>
+
+<details> <summary><b>TEST CASE5</b></summary> 
+<div markdown="1"> 
+ 
+### 요구사항 RE_0008 
+다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
 ```sql
 -- RE0008 movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
 select * from movies as ms 
@@ -256,8 +283,15 @@ left join actor as a on ma.actor_id=a.id;
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0008.gif?raw=true">
 
-TEST CASE6
-요구사항 RE_0010 등급에 대한 필터링
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE6</b></summary> 
+<div markdown="1"> 
+
+### 요구사항 RE_0010 
+등급에 대한 필터링
 ```sql
 -- RE0010 movie 테이블에 content_rating 을 통해 성인 콘테츠을 포함/포함하지 않은 select 가 가능해야함
 select * from movies where content_rating != 'No Adolescent';
@@ -265,8 +299,14 @@ select * from movies where content_rating = 'No Adolescent';
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0010.gif?raw=true">
 
-TEST CASE7 
-요구사항 RE0012
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE7</b></summary> 
+<div markdown="1"> 
+ 
+### 요구사항 RE0012
 ```sql
 -- RE0012 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
 select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A 
@@ -274,9 +314,14 @@ inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0012.gif?raw=true">
 
+</div> 
+</details>
 
-TEST CASE8 
-요구사항 RE0013
+
+<details> <summary><b>TEST CASE8</b></summary> 
+<div markdown="1"> 
+
+### 요구사항 RE0013
 ```sql
 -- 회원은 장르로 검색했을때 해당 장르인 작품 리스트를 볼 수 있다.
 select movies.title as 제목 from genre inner join movie_genre on movie_genre.genre_id = genre.id
@@ -284,8 +329,13 @@ inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공�
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0013.gif?raw=true">
 
-TEST CASE9
-요구사항 RE0014
+</div> 
+</details>
+
+<details> <summary><b>TEST CASE9</b></summary> 
+<div markdown="1"> 
+ 
+### 요구사항 RE0014
 ```sql
 -- RE0014 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다. 
 select * from movies m
@@ -297,7 +347,15 @@ where a.actor = "유연석" and g.genre = "스릴러";
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0014.gif?raw=true">
 
-TEST CASE10
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE10</b></summary> 
+<div markdown="1"> 
+
+### 요구사항 RE0021
+
 ```sql
 -- RE0021 favoite 테이블에서 좋아요를 찍은 영화별로 count, limit 10을 걸어 리스트 출력
 select * from favorite;
@@ -307,7 +365,13 @@ group by movie_id order by cnt desc;
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0021.gif?raw=true">
 
-TEST CASE11
+</div> 
+</details>
+
+<details> <summary><b>TEST CASE11</b></summary> 
+<div markdown="1"> 
+
+### 요구사항 RE0022
 ```sql
 -- RE0022 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
 select * from review;
@@ -316,7 +380,14 @@ select a.title, b.detail from movies as a inner join review as b on a.id = b.mov
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE22.gif?raw=true">
 
-TEST CASE12
+</div> 
+</details>
+
+
+<details> <summary><b>TEST CASE12</b></summary> 
+<div markdown="1"> 
+ 
+### 요구사항 RE0023
 ```sql
  --RE0023 영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
 
@@ -335,6 +406,9 @@ select * from test.favoite;
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE23-1.gif?raw=true">
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE23-2.gif?raw=true">
+
+</div> 
+</details>
 
 
 
