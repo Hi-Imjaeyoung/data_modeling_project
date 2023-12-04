@@ -330,7 +330,6 @@ select * from test.favoite;
 
 ## 테스팅 영상
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0009.gif?raw=true">
-<iframe width="944" height="531" src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0009.gif?raw=true" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 마지막 한 줄 회고록
 
