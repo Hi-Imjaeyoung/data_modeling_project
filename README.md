@@ -2,7 +2,7 @@
 
 ## ONETEAM 이 만드는 ONETT(One Trendy Time)<br/>
 
-### 이종표,이혜선,임재영,조훈
+### 이종표, 이혜선, 임재영, 조훈
 
 <br/><img src="https://img.shields.io/badge/MySQL-바탕색?style=flat&logo=SQL&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/> <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Redis&logoColor=red"/>
 
