@@ -27,7 +27,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 ## 최종 요구사항
 - 영화 검색 (OTT, 배우, 국가, 감독, 장르, 어워드) <br/>
 - 영화 기록 (내가 본 영화 기록, 좋아하는 영화 목록, 싫어하는 영화 목록) <br/>
-- 리뷰 (영화 별 평정, 리뷰기록), 최신 리뷰순 영화 목록 조회 <br/>
+- 리뷰 (영화 별 평점, 리뷰기록), 최신 리뷰순 영화 목록 조회 <br/>
 - 회원 가입 (이메일 인증 후 계정 활성화, 기본값만으로 가입 가능) <br/>
 - 회원 정보 수정 (마이페이지에서 수정) <br/>
 - 회원 탈퇴 (탈퇴시 탈퇴사유 입력, 회원 정보는 개인정보 정책에 따라 삭제 바로 삭제 되지 않을 수 있음) <br/>
@@ -178,12 +178,12 @@ INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 
 <img width="1236" alt="스크린샷 2023-12-01 오후 10 15 37" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/8a965c5e-d06a-44bc-9645-8d206166c509">
 
-git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작업 후 pr 을 보내 팀장이 merge 하며 형상관리 하였습니다.
+git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작업 후 pr을 보내 팀장이 merge 하며 형상관리 하였습니다.
 
 </div> 
 </details>
 
-<details> <summary><b>5.회의록</b></summary> 
+<details> <summary><b>5. 회의록</b></summary> 
 <div markdown="1"> 
 
 매일 회의를 하며 아이디어들과 추가 및 수정 삭제 되는 컬럼 및 속성들을 기록하며 프로젝트를 발전시켰습니다.
@@ -203,8 +203,9 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 <div markdown="1"> 
  
 ### 요구 사항 RE0001 
-이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
-이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
+
+- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
+- 이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
@@ -220,7 +221,8 @@ update members set active = 1 where id = 1;
 <div markdown="1"> 
  
 ### 요구 사항 RE0002 
-중복 ID 생성 방지 <br/>
+
+- 중복 ID 생성 방지 <br/>
 ```sql
 -- 기존에 있는 email과 같은 email로 insert 쿼리를 실행시 unique에 걸려 insert가 되지 않아야함
 select * from members;
@@ -239,8 +241,9 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 <div markdown="1"> 
  
 ### 요구사항 RE0003,RE0006 <br/>
-회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함. <br>
-disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
+
+- 회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함. <br>
+- disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
 
 ```sql
 -- RE0003 회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함.
@@ -260,7 +263,9 @@ insert into disabled_members(member_id)values(13);
 <div markdown="1"> 
 
 ### 요구사항 RE0007
-movie 기본 정보 없이 insert시 오류 발생
+
+- movie 기본 정보 없이 insert시 오류 발생
+
 ```sql
 -- RE0007 movie 기본 정보 없이 insert시 오류 발생
 insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
@@ -274,7 +279,9 @@ insert into movies(review,content_rating,running_time,release_date,title)values(
 <div markdown="1"> 
  
 ### 요구사항 RE_0008 
-다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
+
+- 다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
+  
 ```sql
 -- RE0008 movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
 select * from movies as ms 
@@ -291,7 +298,9 @@ left join actor as a on ma.actor_id=a.id;
 <div markdown="1"> 
 
 ### 요구사항 RE_0010 
-등급에 대한 필터링
+
+- 등급에 대한 필터링
+  
 ```sql
 -- RE0010 movie 테이블에 content_rating 을 통해 성인 콘테츠을 포함/포함하지 않은 select 가 가능해야함
 select * from movies where content_rating != 'No Adolescent';
@@ -307,6 +316,7 @@ select * from movies where content_rating = 'No Adolescent';
 <div markdown="1"> 
  
 ### 요구사항 RE0012
+
 ```sql
 -- RE0012 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
 select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A 
@@ -322,6 +332,7 @@ inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor
 <div markdown="1"> 
 
 ### 요구사항 RE0013
+
 ```sql
 -- 회원은 장르로 검색했을때 해당 장르인 작품 리스트를 볼 수 있다.
 select movies.title as 제목 from genre inner join movie_genre on movie_genre.genre_id = genre.id
@@ -336,6 +347,7 @@ inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공�
 <div markdown="1"> 
  
 ### 요구사항 RE0014
+
 ```sql
 -- RE0014 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다. 
 select * from movies m
@@ -372,6 +384,7 @@ group by movie_id order by cnt desc;
 <div markdown="1"> 
 
 ### 요구사항 RE0022
+
 ```sql
 -- RE0022 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
 select * from review;
@@ -388,6 +401,7 @@ select a.title, b.detail from movies as a inner join review as b on a.id = b.mov
 <div markdown="1"> 
  
 ### 요구사항 RE0023
+
 ```sql
  --RE0023 영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
 
