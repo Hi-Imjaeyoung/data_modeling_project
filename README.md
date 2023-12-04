@@ -128,13 +128,27 @@ foreign key(nation_id) references nation(id),foreign key(movie_id) references mo
 ## insert data
 
 ```sql
-INSERT INTO ott.actor (actor, info) VALUES ('김수현', 'GOLDMEDALIST');
-INSERT INTO ott.actor (actor, info) VALUES ('김혜수', '호두앤유');
-INSERT INTO ott.actor (actor, info) VALUES ('수지', '매니지먼트 숲');
-INSERT INTO ott.actor (actor, info) VALUES ('조정석', '잼엔터테인먼트');
-INSERT INTO ott.actor (actor, info) VALUES ('박해일', '메이크스타');
-INSERT INTO ott.actor (actor, info) VALUES ('조인성', '아이오케이컴퍼니');
-INSERT INTO ott.actor (actor, info) VALUES ('홍수아', '타조엔터테인먼트');
+-- members 테이블 데이터 추가
+INSERT INTO ott.members (email, name, birth, sex, phone_number, nickname, role, active) VALUES ('first@naver.com', 'firstname', '19901224', 'M', '01011110000', 'onetime', 'user');
+
+-- movies
+INSERT INTO ott.movies (summary, review, content_rating, running_time, trailer, release_date, title) 
+VALUES ('오택이 고액을 제시하는 목포행 손님을 태우고 가다 그가 연쇄살인마임을 깨닫게 되면서 공포의 주행을 시작하게 되는 이야기를 담은 스릴러 시리즈', null, 'No Adolescent', 600, 'https://youtu.be/UUAj8dfuvAs', '2023-11-20', '운수 오진날 1시즌');
+
+-- ott 테이블 데이터 추가
+INSERT INTO ott.ott (ott) VALUES ('NETFLIX');
+
+-- movie_ott 테이블 데이터 추가
+insert into movie_ott(ott_id, movie_id) values (7,1);
+
+-- review 테이블 데이터 추가
+INSERT INTO ott.review (grade, movie_id, user_id, detail) VALUES (1, 2, 1, 2, '마동석 ㅋㅋㅋ 재밌게 봣어요');
+
+-- favorite
+INSERT INTO ott.favorite (movie_id, user_id, love, dislike) VALUES (12, 11, 1, 0);
+
+-- watched_movie 테이블 데이터 추가	
+INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 ```
 
 ## 4. 프로젝트 관리
