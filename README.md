@@ -190,6 +190,7 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 'test1234@naver.com', '1234', '이혜선', '01012341234', '19900101','emma') ;
 update members set active = 1 where id = 1;
 ```
+![RE0001](https://github.com/hyesunlee30/data_modeling_1team/assets/106050747/8567c61e-19b9-4d15-b766-509b39825535)
 
 2. CASE2
 
