@@ -48,7 +48,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 ## 2. 논리적 모델링
 
-<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/ott%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%B5%9C%EC%A2%85.drawio.png?raw=true"/>
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%E3%84%B9%E3%85%87%E3%84%B9%E3%85%87%EC%B5%9C%EC%A2%85.drawio.png?raw=true"/>
 <br/>
 <br/>
 
