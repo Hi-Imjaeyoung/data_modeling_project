@@ -184,7 +184,7 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 ## 2. TEST quries
 
 TEST CASE1
-이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
+요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
 이메일 인즈 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
@@ -195,7 +195,8 @@ update members set active = 1 where id = 1;
 ![RE0001](https://github.com/hyesunlee30/data_modeling_1team/assets/106050747/8567c61e-19b9-4d15-b766-509b39825535)
 
 TEST CASE2
-중복 ID 생성 방지
+요구 사항 RE0002 
+중복 ID 생성 방지 <br/>
 ```sql
 -- 기존에 있는 email과 같은 email로 insert 쿼리를 실행시 unique에 걸려 insert가 되지 않아야함
 select * from members;
@@ -205,18 +206,40 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 'test1234@naver.com', '4321', '이선혜', '01012341234', '19900101','emma') ;
 ```
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0002.gif?raw=true">
+
+TEST CASE3
+요구사항 RE0005,RE0006 <br/>
+회원탈퇴사유 없이 disabled_member에 데이터 insert 시 오류가 나야함.
+disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
+
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0003~6.gif?raw=true">
+
+TEST CASE4
+요구사항 RE0007
+movie 기본 정보 없이 insert시 오류 발생
+
+<im src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE007.gif?raw=true">
+
+TEST CASE5
+요구사항 RE_0008
+<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0008.gif?raw=true">
+
+
+TEST CASE4
 ```sql
 -- movie 기본 정보 없이 insert시 오류 발생
 insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
 ```
 
+TEST CASE3 + 6
 ```sql
+다대다 관계를 가진 정보들을 mapping 테이블로 빼고 movied_id로 연결
 -- movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
 select * from movies as ms
 inner join  movie_actor as ma on ms.id=ma.movie_id
 left join actor as a on ma.actor_id=a.id;
 ```
-
+TEST CASE4
 ```sql
 -- disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
 
@@ -229,18 +252,19 @@ select * from movies where content_rating != 'No Adolescent';
 select * from movies where content_rating = 'No Adolescent';
 ```
 
+case 7 
 ```sql
 -- 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
 select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A
 inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor_id = C.id where C.actor = "마동석";
 ```
-
+case 8
 ```sql
 -- 회원은 장르로 검색했을때 해당 장르인 작품 리스트를 볼 수 있다.
 select movies.title as 제목 from genre inner join movie_genre on movie_genre.genre_id = genre.id
 inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공포";
 ```
-
+case 9
 ```sql
 -- 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다.
 select * from movies m
@@ -251,6 +275,7 @@ left join genre g on g.id = mg.genre_id
 where a.actor = "유연석" and g.genre = "스릴러";
 ```
 
+case 10 
 ```sql
 -- favoite 테이블에서 좋아요를 찍은 영화별로 count, limit 10을 걸어 리스트 출력
 select * from favorite;
@@ -258,14 +283,14 @@ select count(*) AS cnt, m.title from favorite f
 left join movies m on f.movie_id = m.id
 group by movie_id order by cnt desc;
 ```
-
+case 11
 ```sql
 -- 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
 select * from review;
 select a.title, b.detail from movies as a inner join review as b on a.id = b.movie_id
  where b.created_date > date_add(now(),interval -7 day) and b.detail is not null;
 ```
-
+case 12
 ```sql
  --영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
 insert into members (id,email, passwd, name, phone_number, birth, nickname) values (
