@@ -35,7 +35,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 # 🤗프로젝트
 <details>
-<summary> ## 1. 개념적 모델링</summary>
+<summary> <b>1. 개념적 모델링</b></summary>
 <div markdown="1">
 
 - movie 라는 테이블에 기본 정보들을 나열한 뒤에, 한 컬럼에 여러 컬럼이 들어가야 하는 것들을 빼서 1차 정규화를 했습니다. 
