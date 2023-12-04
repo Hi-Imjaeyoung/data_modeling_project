@@ -138,13 +138,13 @@ VALUES ('오택이 고액을 제시하는 목포행 손님을 태우고 가다 �
 -- ott 테이블 데이터 추가
 INSERT INTO ott.ott (ott) VALUES ('NETFLIX');
 
--- movie_ott 테이블 데이터 추가
+-- movie와 ott의 맵핑테이블인 movie_ott 테이블 데이터 추가
 insert into movie_ott(ott_id, movie_id) values (7,1);
 
 -- review 테이블 데이터 추가
 INSERT INTO ott.review (grade, movie_id, user_id, detail) VALUES (1, 2, 1, 2, '마동석 ㅋㅋㅋ 재밌게 봣어요');
 
--- favorite
+-- favorite 테이블 데이터 추가
 INSERT INTO ott.favorite (movie_id, user_id, love, dislike) VALUES (12, 11, 1, 0);
 
 -- watched_movie 테이블 데이터 추가	
