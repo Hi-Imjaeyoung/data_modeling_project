@@ -1,5 +1,4 @@
-![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/13d2cb10-5582-41f0-a11a-18e7870deba3)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/9cc86f19-f77b-43d7-8086-07f7bf978a42)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/20779b86-79ba-4e79-a79d-89a939e075cb)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/76893b6d-01c0-4758-b396-895042dcc4b5)![image](https://github.com/hyesunlee30/data_modeling_1team/assets/48422615/ff3ee39c-9617-4508-9ad9-07cda2a84c5d)
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=ONETEAM이%20만든%20ONETT&fontSize=50)
+
 
 ## ONETEAM 이 만드는 ONETT(One Trendy Time)<br/>
 
