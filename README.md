@@ -410,7 +410,8 @@ select * from test.favoite;
 </div> 
 </details>
 
-
+<details> <summary><b>TEST REDIS</b></summary> 
+<div markdown="1"> 
 
 ## redis를 이용하여 구현한 최근 조회 영화 10건 리스트 입니다. <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=red"/>
 
@@ -419,6 +420,10 @@ select * from test.favoite;
 
 ## 테스팅 영상
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/TEST%20%EC%98%81%EC%83%81/RE0009.gif?raw=true">
+
+
+</div> 
+</details>
 
 ## 마지막 한 줄 회고록
 
