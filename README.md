@@ -199,7 +199,7 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 <img width="1312" alt="스크린샷 2023-12-02 오후 7 46 53" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/8f2fae58-9454-44e8-aef4-60ccbe6ccaa2">
 
 ## 2. TEST quries & TEST 영상
-<details> <summary><b>TEST CASE1</b></summary> 
+<details> <summary><b>TEST CASE 1</b></summary> 
 <div markdown="1"> 
  
 ### 요구 사항 RE0001 
@@ -217,7 +217,7 @@ update members set active = 1 where id = 1;
 </div> 
 </details>
 
-<details> <summary><b>TEST CASE2</b></summary> 
+<details> <summary><b>TEST CASE 2</b></summary> 
 <div markdown="1"> 
  
 ### 요구 사항 RE0002 
@@ -237,7 +237,7 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 </details>
 
 
-<details> <summary><b>TEST CASE3</b></summary> 
+<details> <summary><b>TEST CASE 3</b></summary> 
 <div markdown="1"> 
  
 ### 요구사항 RE0003,RE0006 <br/>
@@ -259,7 +259,7 @@ insert into disabled_members(member_id)values(13);
 </details>
 
 
-<details> <summary><b>TEST CASE4</b></summary> 
+<details> <summary><b>TEST CASE 4</b></summary> 
 <div markdown="1"> 
 
 ### 요구사항 RE0007
@@ -275,7 +275,7 @@ insert into movies(review,content_rating,running_time,release_date,title)values(
 </div> 
 </details>
 
-<details> <summary><b>TEST CASE5</b></summary> 
+<details> <summary><b>TEST CASE 5</b></summary> 
 <div markdown="1"> 
  
 ### 요구사항 RE_0008 
@@ -294,7 +294,7 @@ left join actor as a on ma.actor_id=a.id;
 </details>
 
 
-<details> <summary><b>TEST CASE6</b></summary> 
+<details> <summary><b>TEST CASE 6</b></summary> 
 <div markdown="1"> 
 
 ### 요구사항 RE_0010 
@@ -312,7 +312,7 @@ select * from movies where content_rating = 'No Adolescent';
 </details>
 
 
-<details> <summary><b>TEST CASE7</b></summary> 
+<details> <summary><b>TEST CASE 7</b></summary> 
 <div markdown="1"> 
  
 ### 요구사항 RE0012
@@ -328,7 +328,7 @@ inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor
 </details>
 
 
-<details> <summary><b>TEST CASE8</b></summary> 
+<details> <summary><b>TEST CASE 8</b></summary> 
 <div markdown="1"> 
 
 ### 요구사항 RE0013
@@ -343,7 +343,7 @@ inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공�
 </div> 
 </details>
 
-<details> <summary><b>TEST CASE9</b></summary> 
+<details> <summary><b>TEST CASE 9</b></summary> 
 <div markdown="1"> 
  
 ### 요구사항 RE0014
@@ -363,7 +363,7 @@ where a.actor = "유연석" and g.genre = "스릴러";
 </details>
 
 
-<details> <summary><b>TEST CASE10</b></summary> 
+<details> <summary><b>TEST CASE 10</b></summary> 
 <div markdown="1"> 
 
 ### 요구사항 RE0021
@@ -380,7 +380,7 @@ group by movie_id order by cnt desc;
 </div> 
 </details>
 
-<details> <summary><b>TEST CASE11</b></summary> 
+<details> <summary><b>TEST CASE 11</b></summary> 
 <div markdown="1"> 
 
 ### 요구사항 RE0022
@@ -397,7 +397,7 @@ select a.title, b.detail from movies as a inner join review as b on a.id = b.mov
 </details>
 
 
-<details> <summary><b>TEST CASE12</b></summary> 
+<details> <summary><b>TEST CASE 12</b></summary> 
 <div markdown="1"> 
  
 ### 요구사항 RE0023
