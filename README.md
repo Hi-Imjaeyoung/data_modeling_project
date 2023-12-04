@@ -34,8 +34,9 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 - 최신 조회 영화 10건 목록 조회 <br />
 
 # 🤗프로젝트
-
-## 1. 개념적 모델링
+<details>
+<summary>## 1. 개념적 모델링</summary>
+<div markdown="1">
 
 - movie 라는 테이블에 기본 정보들을 나열한 뒤에, 한 컬럼에 여러 컬럼이 들어가야 하는 것들을 빼서 1차 정규화를 했습니다. 
 - movie - ott 는 한 영화는 많은 OTT를 가지며, 한 OTT도 많은 영화를 가질 수 있는 다대다 관계로 일대다 관계로 풀어줄 맵핑 테이블 movie_ott 을 설계했습니다.
@@ -45,6 +46,11 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 
 
 <img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%EB%A7%88%EC%A7%80%EB%A7%89%20%EA%B0%9C%EB%85%90%20erd_hyesun20231204.drawio.png?raw=true"/>
+</div>
+</details>
+
+
+
 
 ## 2. 논리적 모델링
 
