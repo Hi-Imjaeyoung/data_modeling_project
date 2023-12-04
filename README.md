@@ -182,7 +182,7 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 
 
 ## 2. TEST quries
-1. CASE1
+
 
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
@@ -192,7 +192,7 @@ update members set active = 1 where id = 1;
 ```
 ![RE0001](https://github.com/hyesunlee30/data_modeling_1team/assets/106050747/8567c61e-19b9-4d15-b766-509b39825535)
 
-2. CASE2
+
 
 ```sql
 -- 기존에 있는 email과 같은 email로 insert 쿼리를 실행시 unique에 걸려 insert가 되지 않아야함
@@ -203,24 +203,10 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 'test1234@naver.com', '4321', '이선혜', '01012341234', '19900101','emma') ;
 ```
 
-3. CASE3
-
-```sql
--- disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
-
-insert into disabled_members(member_id,reason,advise)values(14,'그냥','UI가 이상해요');
-insert into disabled_members(member_id,reason)values(13,'공부해야해요');
-insert into disabled_members(member_id)values(13);
-```
-
-4. CASE4
-
 ```sql
 -- movie 기본 정보 없이 insert시 오류 발생
 insert into movies(review,content_rating,running_time,release_date,title)values('재밌었어요','12years','120',20130305,'메간');
 ```
-
-5. CASE5
 
 ```sql
 -- movie의 다른 정보를 가진 정보들을 movie_id 로 연결되어 있어야 한다.
@@ -229,15 +215,17 @@ inner join  movie_actor as ma on ms.id=ma.movie_id
 left join actor as a on ma.actor_id=a.id;
 ```
 
-6. CASE6
-
 ```sql
+-- disabled_member에 데이터 insert시 advice 칼럼이 null 이어도 오류가 나지 않음
+
+insert into disabled_members(member_id,reason,advise)values(14,'그냥','UI가 이상해요');
+insert into disabled_members(member_id,reason)values(13,'공부해야해요');
+insert into disabled_members(member_id)values(13);
+
 -- movie 테이블에 content_rating 을 통해 성인 콘테츠을 포함/포함하지 않은 select 가 가능해야함
 select * from movies where content_rating != 'No Adolescent';
 select * from movies where content_rating = 'No Adolescent';
 ```
-
-7. CASE7
 
 ```sql
 -- 회원은 배우로 검색했을때 해당 배우가 나오는 작품 리스트를 볼 수 있다.
@@ -245,15 +233,11 @@ select C.actor, A.title, A.summary, A.review, A.content_rating from movies as A
 inner join movie_actor as B on A.id = B.movie_id left join actor as C on b.actor_id = C.id where C.actor = "마동석";
 ```
 
-8.
-
 ```sql
 -- 회원은 장르로 검색했을때 해당 장르인 작품 리스트를 볼 수 있다.
 select movies.title as 제목 from genre inner join movie_genre on movie_genre.genre_id = genre.id
 inner join movies on movies.id = movie_genre.movie_id where genre.genre = "공포";
 ```
-
-9.
 
 ```sql
 -- 회원은 다중의 키워드로 검색하여 작품 리스트를 볼 수 있다.
@@ -265,8 +249,6 @@ left join genre g on g.id = mg.genre_id
 where a.actor = "유연석" and g.genre = "스릴러";
 ```
 
-10.
-
 ```sql
 -- favoite 테이블에서 좋아요를 찍은 영화별로 count, limit 10을 걸어 리스트 출력
 select * from favorite;
@@ -275,16 +257,12 @@ left join movies m on f.movie_id = m.id
 group by movie_id order by cnt desc;
 ```
 
-11.
-
 ```sql
 -- 최신 리뷰가 생성된 영화 검색 일주일 동안 생성된 영화만 출력
 select * from review;
 select a.title, b.detail from movies as a inner join review as b on a.id = b.movie_id
  where b.created_date > date_add(now(),interval -7 day) and b.detail is not null;
 ```
-
-12.
 
 ```sql
  --영화 삭제시 mapping 테이블 row가 삭제되고, 리뷰와 fovorite 연관 테이블의 row 값이 외래키 제약조건 값처럼 처리
@@ -319,7 +297,7 @@ select * from test.favoite;
 | 이혜선 | "멋진 팀원들을 만나 매일이 행복한 프로젝트였습니다. 다양한 테이블에 관계에 대해 고민해볼 수 있어 재밌었습니다. |
 |  조훈  |     "서비스구축부터 DB까지 직접 작성해보니 개발에 대한 대략적인 뼈대가 잡힌 것 같아 보람찬 시간이였습니다"     |
 | 임재영 |                                                   "의견좋다"                                                   |
-| 이종표 |                                                   "의견좋다"                                                   |
+| 이종표 |                                                   ""                                                   |
 
 <br/>
 
