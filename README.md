@@ -44,7 +44,7 @@ ONETT와 함께 하나의 트렌디한 시간을 가져보세요.
 - member의 active 값을 통해 disabled_member에 탈퇴이유와 조언들을 남기고 member의 정보를 제약조건을 통해 물리적 삭제하지 않고 개인정보 정책에 맞게 논리적 삭제할 수 있도록 설계했습니다. 
 
 
-<img src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/data_modeling/ERD/%EA%B0%9C%EB%85%90%EC%A0%81%20ERD_hyesun_20231203.png?raw=true"/>
+<img src="https://raw.githubusercontent.com/hyesunlee30/data_modeling_1team/main/data_modeling/ERD/onett_hyesun_20231204.drawio.png"/>
 
 ## 2. 논리적 모델링
 
