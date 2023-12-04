@@ -191,12 +191,12 @@ git과 연결 시켜 Jira를 통해 이슈를 관리하고 각 브랜치로 작�
 
 <img width="1312" alt="스크린샷 2023-12-02 오후 7 46 53" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/8f2fae58-9454-44e8-aef4-60ccbe6ccaa2">
 
-
 ## 2. TEST quries & TEST 영상
+<details> <summary><b>TEST CASE1</b></summary> 
+<div markdown="1"> 
+### 요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
+### 이메일 인증 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 
-TEST CASE1
-요구 사항 RE0001 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함.
-이메일 인즈 후 update 쿼리를 통해 1로 변경되며 활성화됨.
 ```sql
 -- 이메일과 비밀번호 ,이름, 전화번호, 생년월일, 닉네임 가입할 때 role 기본값은 user , active 기본값은 0 이어야함. 승인을 하는 update 쿼리를 통해 1로 변경됨
 insert into members (email, passwd, name, phone_number, birth, nickname) values (
@@ -204,6 +204,9 @@ insert into members (email, passwd, name, phone_number, birth, nickname) values 
 update members set active = 1 where id = 1;
 ```
 ![RE0001](https://github.com/hyesunlee30/data_modeling_1team/assets/106050747/8567c61e-19b9-4d15-b766-509b39825535)
+</div> 
+</details>
+
 
 TEST CASE2
 요구 사항 RE0002 
