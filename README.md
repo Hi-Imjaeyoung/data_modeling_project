@@ -158,7 +158,7 @@ INSERT INTO ott.watched_movie (movie_id, user_id) VALUES (3, 3);
 ### WBS
 
 [WBS](https://docs.google.com/spreadsheets/d/18YNMnxvCihb60FS0_cGEvzS2jzDiq4Dp/edit#gid=1057334268) _Click here_
-<img width="1203" alt="스크린샷 2023-12-01 오후 9 27 13" src="https://github.com/hyesunlee30/data_modeling_1team/assets/142702766/b54f07d2-772d-4ae3-8e91-bec782c7cbd0">
+<img width="1203" alt="스크린샷 2023-12-01 오후 9 27 13" src="https://github.com/hyesunlee30/data_modeling_1team/blob/main/%ED%9A%8C%EC%9D%98%EB%A1%9D/wbs%20%EC%BA%A1%EC%B2%98.PNG?raw=true">
 
 초기 일정관리 및 수정되는 일정관리들에 대해 고민하며 WBS를 통해 각 업무에 대해 세부적인 일정관리를 진행하였습니다.
 <br/>
